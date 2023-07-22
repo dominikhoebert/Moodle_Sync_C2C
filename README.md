@@ -4,6 +4,13 @@
 
 Python script for coping grades from one course to another.
 
+### [Docker](https://hub.docker.com/repository/docker/dominik1220/moodle_sync_c2c)
+
+``` bash
+docker pull dominik1220/moodle_sync_c2c
+docker run --rm -v ${pwd}/data:/c2c/data -v ${pwd}/logs:/c2c/logs dominik1220/moodle_sync_c2c data/credentials.json 1234 5678 --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
+```
+
 ### CLI interface:
 
 ``` bash
@@ -50,4 +57,6 @@ Script to get the module instance id from a course and module
 * ~~cli interface~~
 * ~~get grade from calculations (gradeitem)~~
 * docker container with cron
+* show also calculation instance id
+* save history of copied grades in file
 * ~~logging~~
