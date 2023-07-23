@@ -179,9 +179,12 @@ class MoodleSync:
             self.set_user_flags(assignment_id, user_flag_object)
         return len(grades)
 
+    def core_grades_get_gradeitems(self, courseid):
+        return self.call('core_grades_get_gradeitems', courseid=courseid)
+
 
 if __name__ == '__main__':
-    ms = moodlesync_from_credentials()
+    ms = moodlesync_from_credentials(credentials_file_path="data/credentials_local.json")
     # assignment_id = 9430
     # new_grades = [Grade(student_id=82, from_assignment=None, grade=2, comment="test5")]
     # updated_grades = ms.grade_upload(assignment_id=assignment_id, grades=new_grades, notifications="none")
@@ -189,4 +192,5 @@ if __name__ == '__main__':
 
     # print(ms.get_gradereport_of_course(1309))
     # print(ms.mod_assign_get_grades([2039]))
-    print(ms.get_gradereport_of_course(1309))
+    #print(ms.get_gradereport_of_course(1309))
+    print(ms.core_grades_get_gradeitems(2))

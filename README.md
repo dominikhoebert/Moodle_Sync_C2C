@@ -42,7 +42,17 @@ contact your moodle administrator for the service name
 
 ## Module Instance
 
-Script to get the module instance id from a course and module
+Script to get the id from a course and grade item
+
+``` bash
+python show_module_instance.py credentials.json
+```
+
+### Docker:
+
+``` bash
+docker run --rm -it --entrypoint python dominik1220/moodle_sync_c2c show_module_instances.py credentials.json
+```
 
 ## TODO
 
@@ -57,6 +67,6 @@ Script to get the module instance id from a course and module
 * ~~cli interface~~
 * ~~get grade from calculations (gradeitem)~~
 * ~~docker container~~
-* show also calculation instance id
+* ~~show also calculation instance id~~
 * ~~save history of copied grades in file~~
 * ~~logging~~
