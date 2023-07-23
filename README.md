@@ -8,23 +8,23 @@ Python script for coping grades from one course to another.
 
 ``` bash
 docker pull dominik1220/moodle_sync_c2c
-docker run --rm -v ${pwd}/data:/c2c/data -v ${pwd}/logs:/c2c/logs dominik1220/moodle_sync_c2c data/credentials.json 1234 5678 --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
+docker run --rm -v ${pwd}/data:/c2c/data -v ${pwd}/logs:/c2c/logs dominik1220/moodle_sync_c2c data/credentials.json 1234 5678 --save-grade --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
 ```
 
 ### CLI interface:
 
 ``` bash
 python c2c.py -h
-python c2c.py credentials.json file from_course_instance_id to_course_instance_id --comment "comment"
-python c2c.py credentials.json 1234 5678 --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
+python c2c.py credentials.json file from_course_instance_id to_course_instance_id --save-grade --comment "comment"
+python c2c.py credentials.json 1234 5678 --save-grade --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
 ```
 
 If grades from a calculation are needed, the course id has to be specified with the --course-id parameter.
 IDs can be found in the URL of the calculation.
 
 ``` bash
-python c2c.py credentials.json file from_course_instance_id to_course_instance_id --course-id course_id --comment "comment"
-python c2c.py credentials.json 1234 5678 --course-id 9876 --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
+python c2c.py credentials.json file from_course_instance_id to_course_instance_id --course-id course_id --save-grade --comment "comment"
+python c2c.py credentials.json 1234 5678 --course-id 9876 --save-grade --comment "copied from [course name assignment name](https://elearning.school.com/mod/assign/view.php?id=123456)"
 ```
 
 ### credentials.json structure
@@ -56,7 +56,7 @@ Script to get the module instance id from a course and module
 * ~~get grade from different course~~
 * ~~cli interface~~
 * ~~get grade from calculations (gradeitem)~~
-* docker container with cron
+* ~~docker container~~
 * show also calculation instance id
-* save history of copied grades in file
+* ~~save history of copied grades in file~~
 * ~~logging~~
