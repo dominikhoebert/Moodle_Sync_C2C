@@ -18,9 +18,9 @@ course_choice = int(input(f"Choose a course (1-{len(courses)}): ")) - 1
 course_id = list(courses.values())[course_choice]['id']
 print(f"Course ID: {course_id}")
 
-# modules = ms.get_course_modules(course_id)
-# for module in modules:
-#     print(f"{module}\tID:{modules[module]['id']}\tInstance:{modules[module]['instance']}")
-grade_items = ms.core_grades_get_gradeitems(course_id)
-for grade_item in grade_items['gradeItems']:
-    print(f"{grade_item['itemname']}\tID:{grade_item['id']}")
+modules = ms.get_course_modules(course_id)
+for module in modules:
+    print(f"{module}\tID:{modules[module]['id']}\tInstance:{modules[module]['instance']}")
+# grade_items = ms.core_grades_get_gradeitems(course_id)
+# for grade_item in grade_items['gradeItems']:
+#     print(f"{grade_item['itemname']}\tID:{grade_item['id']}")
