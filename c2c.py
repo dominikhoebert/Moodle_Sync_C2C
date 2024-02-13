@@ -33,7 +33,7 @@ def main():
 
     from_assignment_id = args.from_assignment_id
     to_assignment_id = args.to_assignment_id
-    comment = args.comment
+    comment = args.comment if args.comment is not None else ""
     course_id = args.course_id
     if course_id is None:
         grades = grades_list_from_assign_get_grades_response(ms.mod_assign_get_grades([from_assignment_id]), comment)
